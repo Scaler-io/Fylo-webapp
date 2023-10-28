@@ -12,6 +12,7 @@ import { SharedEffects } from './state/shared/shared.effect';
 import { HeroModule } from './feature/hero/hero.module';
 import { FyloFeatureModule } from './feature/fylo-feature/fylo-feature.module';
 import { ProductiveFeatureModule } from './feature/productive-feature/productive-feature.module';
+import { TestimonialModule } from './feature/testimonial/testimonial.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { ProductiveFeatureModule } from './feature/productive-feature/productive
     HeroModule,
     FyloFeatureModule,
     ProductiveFeatureModule,
+    TestimonialModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
     EffectsModule.forRoot([SharedEffects]),
