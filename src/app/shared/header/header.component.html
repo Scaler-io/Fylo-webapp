@@ -1,0 +1,21 @@
+<header class="container mx-auto pt-10 px-6 text-center h-40 md:h-20">
+  <!-- Dynamic Logo -->
+  <div
+    class="bg-logo-light-mode dark:bg-logo-dark-mode bg-no-repeat h-20 w-48 mx-auto md:mx-0 md:absolute top-10 left-10"
+  ></div>
+  <!-- Menu -->
+  <div
+    class="flex items-center justify-center space-x-4 md:space-x-10 md:absolute top-12 right-10"
+  >
+    <a href="#feature" class="hover:text-accentCyan capitalize">feature</a>
+    <a href="#portfolio" class="hover:text-accentCyan capitalize">portfolio</a>
+    <button
+      (click)="toggleDarkMode()"
+      class="text-gray-500 flex items-center dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus: ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 5"
+    >
+      <span class="material-symbols-outlined">{{
+        (isDarkMode$ | async) ? "dark_mode" : "light_mode"
+      }}</span>
+    </button>
+  </div>
+</header>
