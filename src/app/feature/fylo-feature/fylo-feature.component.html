@@ -1,0 +1,19 @@
+<section id="feature" class="pt-12 bg-gray-50 dark:bg-darkBlue1">
+  <div class="container mx-auto px-6 pb-32">
+    <!-- row -->
+    <div [class.mt-28]="notFirstRow(i)" class="flex flex-col space-y-24 text-center md:flex-row md:space-y-0" *ngFor="let rows of features; let i = index">
+      <div
+        class="flex flex-col items-center space-y-2 md:w-1/2"
+        *ngFor="let feature of rows"
+      >
+        <div class="flex items-center justify-center h-24 mb-6">
+          <img [src]="feature.icon" alt="" />
+        </div>
+        <h3 class="text-xl font-semibold">{{ feature.heading }}</h3>
+        <p class="max-w-md">
+          {{ feature.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

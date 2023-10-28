@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Raleway", "sans-serif"],
-        opensans: ["Open Sans", "sans-serif"],
+        opensans: ["Titillium Web", "sans-serif"],
       },
       backgroundImage: (theme) => ({
         "logo-dark-mode": "url('src/assets/images/logo-dark-mode.svg')",
