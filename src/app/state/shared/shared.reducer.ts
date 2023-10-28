@@ -1,4 +1,4 @@
-import { DARK_MODE_TOGGLE, SharedActions } from './shared.action';
+import { SET_DARK_MODE, SET_LIGHT_MODE, SharedActions } from './shared.action';
 
 export const SHARED_STATE_NAME = 'sharedState';
 
@@ -7,7 +7,7 @@ export interface SharedState {
 }
 
 const initialState: SharedState = {
-  darkMode: false,
+  darkMode: null,
 };
 
 export function sharedReducer(
@@ -15,10 +15,15 @@ export function sharedReducer(
   action: SharedActions
 ) {
   switch (action.type) {
-    case DARK_MODE_TOGGLE:
+    case SET_DARK_MODE:
       return {
         ...state,
-        darkMode: !state.darkMode,
+        darkMode: true,
+      };
+    case SET_LIGHT_MODE:
+      return {
+        ...state,
+        darkMode: false,
       };
     default:
       return state;

@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { appReducer } from './store/app.state';
+import { SharedEffects } from './state/shared/shared.effect';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,7 @@ import { appReducer } from './store/app.state';
     HeaderModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([SharedEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

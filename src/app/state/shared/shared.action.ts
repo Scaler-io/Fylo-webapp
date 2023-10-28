@@ -1,10 +1,16 @@
-import { Action } from "@ngrx/store";
+import { Action } from '@ngrx/store';
 
-export const DARK_MODE_TOGGLE = 'DARK_MODE_TOGGLE';
+export const SET_DARK_MODE = 'SET_DARK_MODE';
+export const SET_LIGHT_MODE = 'SET_LIGHT_MODE';
 
-export class DarkModeToggle implements Action{
-    readonly type = DARK_MODE_TOGGLE;
-    constructor(){}
+export class SetDarkMode implements Action {
+  readonly type = SET_DARK_MODE;
+  constructor() {}
 }
 
-export type SharedActions = DarkModeToggle;
+export class SetLightMode implements Action {
+  readonly type = SET_LIGHT_MODE;
+  constructor() {}
+}
+
+export type SharedActions = SetDarkMode | SetLightMode;

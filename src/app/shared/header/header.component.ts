@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { DarkModeToggle } from 'src/app/state/shared/shared.action';
+import { SetDarkMode, SetLightMode } from 'src/app/state/shared/shared.action';
 import { isDarkMode } from 'src/app/state/shared/shared.selector';
 import { AppState } from 'src/app/store/app.state';
 
@@ -11,14 +10,27 @@ import { AppState } from 'src/app/store/app.state';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  public isDarkMode$: Observable<boolean>;
+  public isDarkMode: boolean;
   constructor(private store: Store<AppState>) {}
+  private subscriptions = {
+    darkMode: null,
+  };
 
   ngOnInit(): void {
-    this.isDarkMode$ = this.store.select(isDarkMode);
+    this.subscriptions.darkMode = this.store
+      .select(isDarkMode)
+      .subscribe((res) => {
+        this.isDarkMode = res;
+      });
   }
 
   public toggleDarkMode() {
-    this.store.dispatch(new DarkModeToggle());
+    if (!this.isDarkMode) {
+      console.log('light mode toggle');
+      this.store.dispatch(new SetDarkMode());
+    } else {
+      console.log('darkmode toggle');
+      this.store.dispatch(new SetLightMode());
+    }
   }
 }
