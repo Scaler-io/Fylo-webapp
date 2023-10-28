@@ -9,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { appReducer } from './store/app.state';
 import { SharedEffects } from './state/shared/shared.effect';
+import { HeroModule } from './feature/hero/hero.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { SharedEffects } from './state/shared/shared.effect';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
+    HeroModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
     EffectsModule.forRoot([SharedEffects]),
