@@ -13,6 +13,7 @@ import { HeroModule } from './feature/hero/hero.module';
 import { FyloFeatureModule } from './feature/fylo-feature/fylo-feature.module';
 import { ProductiveFeatureModule } from './feature/productive-feature/productive-feature.module';
 import { TestimonialModule } from './feature/testimonial/testimonial.module';
+import { EarlyAccessModule } from './feature/early-access/early-access.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { TestimonialModule } from './feature/testimonial/testimonial.module';
     FyloFeatureModule,
     ProductiveFeatureModule,
     TestimonialModule,
+    EarlyAccessModule,
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
     EffectsModule.forRoot([SharedEffects]),

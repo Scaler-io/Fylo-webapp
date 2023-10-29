@@ -9,6 +9,7 @@ import { ButtonColor } from 'src/app/core/models/button.model';
 export class ButtonComponent {
   @Input('text') buttonText;
   @Input('color') color;
+  @Input('fullWidth') isFullWidth = false;  
 
   public get buttonColor() {
     switch (this.color) {

@@ -1,3 +1,6 @@
-<button class="p-3 rounded-full w-52 hover:scale-105 md:transition-transform md:delay-75 md:ease-in" [ngClass]="buttonColor">
-    {{buttonText}}
+<button
+  [ngClass]="isFullWidth ? 'w-full' : 'w-52'"
+  class="p-3 px-6 rounded-full hover:scale-105 md:transition-transform md:delay-75 md:ease-in {{buttonColor}}"
+>
+  {{ buttonText }}
 </button>
